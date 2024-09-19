@@ -18,8 +18,7 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(self.central_widget)
 
         layout = QGridLayout(self.central_widget)
-
-        # Стилизация заголовка
+        
         self.label1 = QLabel("Ввод данных")
         font = QtGui.QFont()
         font.setPointSize(14)
@@ -29,9 +28,7 @@ class MainWindow(QMainWindow):
         self.label1.setAlignment(Qt.AlignHCenter)
         self.label1.setStyleSheet("color: #2E8B57; padding: 10px;")
         layout.addWidget(self.label1, 0, 0, 1, 2)
-        # layout.setContentsMargins(3, 3, 3, 3)  # Увеличиваем отступ снизу
 
-        # Стилизация метки и поля ввода для радиуса
         self.radius_label = QLabel("Введите радиус колеса (в метрах):")
         self.radius_label.setStyleSheet("color: #333; font-size: 12px; padding: 5px;")
         self.radius_input = QDoubleSpinBox()
@@ -53,7 +50,6 @@ class MainWindow(QMainWindow):
         layout.addWidget(self.radius_label, 1, 0)
         layout.addWidget(self.radius_input, 1, 1)
 
-        # Стилизация метки и поля ввода для скорости
         self.velocity_label = QLabel("Введите скорость центра масс (в м/с):")
         self.velocity_label.setStyleSheet("color: #333; font-size: 12px; padding: 5px;")
         self.velocity_input = QDoubleSpinBox()
@@ -75,7 +71,6 @@ class MainWindow(QMainWindow):
         layout.addWidget(self.velocity_label, 2, 0)
         layout.addWidget(self.velocity_input, 2, 1)
 
-        # Стилизация метки и выпадающего списка
         self.model_label = QLabel("Выберите модель:")
         self.model_label.setStyleSheet("color: #333; font-size: 12px; padding: 5px;")
         self.model_select = QComboBox()
@@ -98,7 +93,6 @@ class MainWindow(QMainWindow):
         layout.addWidget(self.model_label, 3, 0)
         layout.addWidget(self.model_select, 3, 1)
 
-        # Кнопка запуска
         self.start_button = QPushButton("Перейти к отрисовке графика")
         self.start_button.setStyleSheet("""
             QPushButton {
